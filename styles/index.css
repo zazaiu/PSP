@@ -1,0 +1,112 @@
+body {
+  font-family: ASL, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: url('.') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.overlay {
+  background: #A2A2A2;
+  border-radius: 16px;
+  padding: 40px;
+  max-width: 800px;
+  margin: auto;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+  font-size: 42px;
+  margin-bottom: 30px;
+}
+
+.section {
+  margin-top: 50px;
+}
+
+.section h3 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.section img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.btn-wrapper {
+  margin-top: 12px;
+}
+
+.formula-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.formula-box img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.4);
+  margin-bottom: 16px;
+}
+
+/* Общий стиль кнопок */
+button,
+a.btn,
+.btn-custom,
+.btn-outline-secondary,
+.btn-success,
+.btn-danger {
+  display: inline-block;
+  margin: 8px 6px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+
+/* Цветные кнопки */
+.btn-success {
+  background-color: #28a745;
+  color: #fff;
+}
+.btn-success:hover {
+  background-color: #218838;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: #fff;
+}
+.btn-danger:hover {
+  background-color: #c82333;
+}
+
+.btn-outline-secondary {
+  background-color: transparent;
+  color: #ddd;
+  border: 2px solid #ddd;
+}
+.btn-outline-secondary:hover {
+  background-color: #ddd;
+  color: #000;
+}
+
+.btn-custom {
+  background-color: #006CDC;
+  color: #fff;
+}
+.btn-custom:hover {
+  background-color: #005bb5;
+}

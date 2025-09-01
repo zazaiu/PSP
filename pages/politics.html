@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Формула Политики</title>
+  <link rel="stylesheet" href="../styles/styles.css" />
+</head>
+<body>
+
+  <div class="card">
+    <h2>Формула Политики</h2>
+
+    <div id="quizBox"></div>
+    <div class="score" id="scoreBox"></div>
+
+    <div id="formulaReveal" class="final-formula">
+      💡 <strong>Формула Политики:</strong><br />
+      <span class="formula-highlight">
+        Политика = Власть + Управление общественными процессами + Баланс интересов
+      </span>
+    </div>
+
+    <a href="../index.html" class="btn btn-outline-secondary mt-4">⬅ Назад</a>
+  </div>
+
+  <script>
+    const questions = [
+      {
+        text: "Пропаганда — это форма убеждения, направленная на общество.",
+        correct: true,
+        explanation: "Да, пропаганда — один из инструментов влияния на массы."
+      },
+      {
+        text: "Политические партии не участвуют в формировании общественного мнения.",
+        correct: false,
+        explanation: "Наоборот, партии активно формируют мнение через СМИ и кампании."
+      },
+      {
+        text: "Общество — пассивный объект в политике.",
+        correct: false,
+        explanation: "Современное общество — активный участник политических процессов."
+      },
+      {
+        text: "Цель политики — достижение влияния.",
+        correct: true,
+        explanation: "Да, политика — это игра за влияние и власть."
+      }
+    ];
+
+    let score = 0;
+    let answeredCount = 0;
+
+    const quizBox = document.getElementById("quizBox");
+
+    questions.forEach((q, index) => {
+      const div = document.createElement("div");
+      div.innerHTML = `
+        <p>${q.text}</p>
+        <button onclick="checkAnswer(${index}, true)">Верно</button>
+        <button onclick="checkAnswer(${index}, false)">Неверно</button>
+        <p id="result-${index}"></p>
+      `;
+      quizBox.appendChild(div);
+    });
+
+    function checkAnswer(index, answer) {
+      const q = questions[index];
+      const res = document.getElementById(`result-${index}`);
+      if (res.textContent !== "") return;
+
+      if (answer === q.correct) {
+        score++;
+        res.textContent = "✅ Верно! " + q.explanation;
+        res.style.color = "green";
+      } else {
+        res.textContent = "❌ Неверно. " + q.explanation;
+        res.style.color = "red";
+      }
+
+      answeredCount++;
+      document.getElementById("scoreBox").textContent = `Ваш результат: ${score} из ${questions.length}`;
+
+      if (answeredCount === questions.length) {
+        document.getElementById("formulaReveal").style.display = "block";
+      }
+    }
+  </script>
+
+</body>
+</html>
